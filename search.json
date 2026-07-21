@@ -1,0 +1,297 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Business Information Systems",
+    "section": "",
+    "text": "Welcome\nThis is the open textbook for Business Information Systems, replacing the commercial McGraw Hill materials with freely available, course-authored content.\nEach chapter is written to be worked through alongside a companion Excel workbook, downloadable from that chapter’s page. Look for the yellow/blue/white cell legend explained in each starter file.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#how-this-book-is-organized",
+    "href": "index.html#how-this-book-is-organized",
+    "title": "Business Information Systems",
+    "section": "How this book is organized",
+    "text": "How this book is organized\nThe book follows the same module structure as the course itself: spreadsheet fundamentals first, then databases, then security/cloud/AI. Chapter 1 is the first complete draft; more chapters will be added here as they’re written.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter-01-excel-intro.html",
+    "href": "chapters/chapter-01-excel-intro.html",
+    "title": "1  Chapter 1: Getting Oriented in Excel",
+    "section": "",
+    "text": "1.1 Why Start With a Program That’s Over Forty Years Old?\nExcel first shipped in 1985, for the Macintosh, two years before a Windows version even existed. It wasn’t even the first spreadsheet: VisiCalc introduced the idea back in 1979, and Lotus 1-2-3 dominated the market through most of the early 1980s before Excel pulled ahead in the late 1980s. It’s been the one still standing ever since.\nIn the decades since, organizations have adopted enterprise resource planning systems, cloud data warehouses, business intelligence dashboards, and plenty of other software built specifically to replace the spreadsheet. None of it has managed to. Walk into a Fortune 500 finance department, a five-person nonprofit, or a student club’s treasurer meeting, and a spreadsheet is almost always somewhere in the workflow, often the very first place a new question gets answered, before it’s worth building anything more formal. That staying power isn’t an accident: a spreadsheet lets you ask a new question the moment you think of it, without waiting on IT, a developer, or a vendor to build you something purpose-made.\nExcel today runs on Windows, on Mac, and through Microsoft 365 in the browser and on mobile, so the same workbook behaves the same way whether you’re at a lab computer, your own laptop, or your phone. And rather than getting replaced by AI the way plenty of people once assumed it would be, Excel is absorbing it: tools like Copilot now sit right inside the program, able to write a formula, clean up messy data, or draft a first chart from a plain-language request. That doesn’t make the fundamentals in this chapter optional. If anything, it’s the opposite: understanding what a formula and a reference actually do is what lets you tell whether an AI-generated answer is right, rather than just trusting it. You’ll come back to that idea directly later in the course.\nThat’s why this course starts here. Not because Excel is the newest or most impressive tool you’ll encounter, but because it’s the one you’re most likely to actually touch, in whatever organization you end up working for.\nIf you’ve never opened Excel before, you’re in exactly the right place, this chapter assumes nothing. If you’ve already used it, for a class project, a job, a family budget, this chapter should help you see the structure behind what you’ve been doing, and close the gap between “I can make it work” and “I understand why it works.”\nDownload Husky_Outdoors_Club_Chapter1_Starter.xlsx before you go any further. This chapter is written to be worked through with that file open beside it, not read on its own.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1: Getting Oriented in Excel</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter-01-excel-intro.html#meet-husky-outdoors-club",
+    "href": "chapters/chapter-01-excel-intro.html#meet-husky-outdoors-club",
+    "title": "1  Chapter 1: Getting Oriented in Excel",
+    "section": "1.2 Meet Husky Outdoors Club",
+    "text": "1.2 Meet Husky Outdoors Club\nHusky Outdoors Club is a UConn student organization that owns a small fleet of outdoor gear, tents, mountain bikes, kayaks, sleeping bags, and rents it out to students at Storrs and the regional campuses: Hartford, Stamford, Waterbury, and Avery Point. Every summer, a local outdoor-equipment sponsor matches a percentage of the club’s rental revenue as a fundraising incentive. The more revenue a campus brings in, the higher the match rate climbs.\nThat’s the whole story this chapter runs on. You’ll track what the club owns, what it rented out over the summer, and how much it raised, using nothing but Excel. By the end of the chapter, you’ll be able to answer a real question a club treasurer would actually ask: which campus should get more gear next year, and is the fundraising program working?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1: Getting Oriented in Excel</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter-01-excel-intro.html#getting-oriented-the-excel-environment",
+    "href": "chapters/chapter-01-excel-intro.html#getting-oriented-the-excel-environment",
+    "title": "1  Chapter 1: Getting Oriented in Excel",
+    "section": "1.3 1.1 Getting Oriented: The Excel Environment",
+    "text": "1.3 1.1 Getting Oriented: The Excel Environment\nOpen Excel and you’re looking at a workbook, the whole file. Inside it are one or more worksheets (the tabs along the bottom, “Gear Inventory,” “Rentals Revenue,” and so on). Each worksheet is a grid of cells, and a group of cells you select together, like B5 through B12, is called a range.\nEvery cell has an address made of its column letter and row number. The Name Box, in the upper left just above column A, always tells you which cell you’re in, and you can type an address into it to jump straight there. That’s faster than scrolling once your workbooks get bigger than a screen.\nAcross the top, the ribbon organizes Excel’s tools into tabs. You don’t need to memorize all of them. For this chapter, you’ll mostly live in three: Home (fonts, fill color, number formats, basic editing), Insert (charts and tables, which you’ll meet in Chapter 2), and Formulas (the Insert Function button and formula auditing tools you’ll use later in this chapter).\n\n\n\nThe Excel ribbon showing the Home tab, with the Name Box highlighted above column A.\n\n\nTo enter data, click a cell and start typing. Press Enter to move down, Tab to move right. Excel guesses what kind of data you’re entering, text, a number, or a date, and that guess matters more than it seems like it should (more on that in 1.1b). A handful of keyboard shortcuts will save you real time over the course of this chapter:\n\n\n\nShortcut\nWhat it does\n\n\n\n\nCtrl+Home\nJump to cell A1\n\n\nCtrl+Arrow\nJump to the edge of a block of data in that direction\n\n\nClick, then Shift+Click\nSelect everything between the two cells\n\n\nCtrl+C / Ctrl+V\nCopy / paste\n\n\nCtrl+Alt+V\nOpen Paste Special (section 1.3)\n\n\n\nOne feature worth knowing early: the fill handle, the small square at the bottom-right corner of a selected cell. Drag it down or across and Excel extends a pattern, a sequence of numbers, a list of days, or (as you’ll see in 1.2) a formula copied down a column. This is called AutoFill, and it’s one of the most-used features in the entire program.\n\n\n\nThe fill handle being dragged down a column of cells to AutoFill a pattern.\n\n\nLast thing before the fun starts: save your file as .xlsx, not any other format. It isn’t just a formality: this is the file format your instructor’s tools actually read when they check your work, so an unusual file type isn’t just a style choice, it can mean your work doesn’t get graded correctly.\n\n1.3.1 1.1a A quick tour of formatting\nThis is a tasting, not a full menu. On the Home tab you’ll find bold, italic, font color, and cell fill color, useful for making headers stand out (notice how the starter workbook uses navy headers and yellow “build this” cells; that’s the same toolset). Borders help separate a table from the rest of the sheet. Alignment (left, center, right, and wrap text) controls how content sits inside a cell. You can drag the line between two column letters (or two row numbers) to resize them, or double-click that line to auto-fit to the content.\nThe Home tab also has one-click number-format buttons: currency, percent, and comma-separated thousands. You’ll use these constantly, and section 1.1b explains why they matter more than just looking nice. One more feature worth knowing exists, even though it’s a Chapter 2 topic: conditional formatting, which changes a cell’s appearance automatically based on its value (for example, turning a payout red if it falls below a threshold).\n\n\n1.3.2 1.1b Numbers behind the scenes\nHere’s the idea that will save you the most confusion in this course: Excel stores everything as a plain number, and the format you apply is just a display layer sitting on top of it.\nA date is really a serial number counting days since a fixed starting point. When you subtract one date from another, Excel gives you a plain integer, the number of days between them, because underneath, that’s all a date ever was. A percentage is a decimal: 0.05 stored, displayed as “5%” because percent formatting multiplies by 100 and adds the % sign for you. This is precisely why typing “10” into a cell already formatted as a percentage shows “1000%,” Excel didn’t get confused, it just formatted the raw number 10 as a percent, the same way it would format 0.10.\nLook at the Gear Inventory tab: Replacement Value per Unit is formatted as currency. Now look at Campus Fundraising: Sponsor Match Rate is formatted as a percent. Both are just numbers with a costume on. Understanding that will make troubleshooting formulas much less mysterious later in this chapter.\n\n\n\n\n\n\nTipTry It\n\n\n\nOn Gear Inventory, click on a cell in the Replacement Value per Unit column and look at the Home tab’s number format box, it should say “Currency.” Then do the same for Sponsor Match Rate on Campus Fundraising, it should say “Percentage.” Same idea, two different costumes.\n\n\nKey terms: workbook, worksheet, cell, range, ribbon, Name Box, fill handle, AutoFill, serial date number.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1: Getting Oriented in Excel</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter-01-excel-intro.html#writing-your-first-formulas",
+    "href": "chapters/chapter-01-excel-intro.html#writing-your-first-formulas",
+    "title": "1  Chapter 1: Getting Oriented in Excel",
+    "section": "1.4 1.2 Writing Your First Formulas",
+    "text": "1.4 1.2 Writing Your First Formulas\nA formula always starts with an equals sign. From there, you can use the standard arithmetic operators: + (add), - (subtract), * (multiply), / (divide), and ^ (exponent). Excel follows the same order of operations you learned in math class, PEMDAS: Parentheses first, then Exponents, then Multiplication and Division (left to right), then Addition and Subtraction (left to right). So =2+3*4 returns 14, not 20, because the multiplication happens before the addition. If you actually want the addition to happen first, parentheses force the issue: =(2+3)*4 returns 20. When a formula isn’t returning what you expect, checking whether PEMDAS is doing something you didn’t intend is often the fastest way to find the bug.\nHere’s the habit worth building from day one: a formula should reference cells, not repeat numbers you already typed somewhere else. On the Gear Inventory tab, you could type =15*180 into the Total Value cell for the 4-Person Tent row and get the right answer, 2700. But if the quantity owned ever changes, that number is now wrong and nothing will tell you. Write =C5*D5 instead, referencing the Quantity Owned and Replacement Value cells directly, and the formula stays correct no matter what those cells hold later. This distinction, a real formula versus a typed-in number that happens to be correct today, is exactly what automated feedback on your projects checks for, so it’s worth internalizing here rather than discovering it later as a lost point.\nIf a formula goes wrong, Excel will show you an error value instead of a number. The three you’ll run into most:\n\n\n\n\n\n\n\nError\nWhat it means\n\n\n\n\n#REF!\nA cell your formula depended on got deleted\n\n\n#DIV/0!\nYou divided by zero, or by a blank cell\n\n\n#NAME?\nExcel doesn’t recognize something you typed, often a misspelled function name\n\n\n\n\n1.4.1 1.2a Three ways to build a formula\nYou don’t have to type formulas by hand every time. There are three common approaches, and it’s worth trying all three at least once:\n\nType it directly: click the cell, type =C5*D5, press Enter.\nPoint and click: type =, then click cell C5 instead of typing “C5”, type *, then click D5, then press Enter. Excel fills in the reference for you as you click.\nInsert Function (fx): click the fx button next to the formula bar, search for a function by name, and Excel walks you through its arguments one at a time. This is especially useful once you get to full functions later in this section, rather than simple arithmetic. Excel’s formula AutoComplete (the dropdown that appears as you start typing a function name) does something similar.\n\n\n\n\nThe Insert Function dialog box next to the Function Arguments dialog, showing labeled argument fields for a selected function.\n\n\n\n\n\n\n\n\nTipTry It\n\n\n\nOn Gear Inventory, build the Total Value formula for the first item (4-Person Tent) by typing it directly. Build it for the second item (Mountain Bike) by clicking cells instead of typing their addresses. Then select both cells and drag the fill handle down to complete the rest of the column with AutoFill. Repeat the same idea on the Rentals Revenue tab, where Revenue equals Times Rented times Price per Use, twenty rows this time instead of eight.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1: Getting Oriented in Excel</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter-01-excel-intro.html#copy-paste-and-paste-special",
+    "href": "chapters/chapter-01-excel-intro.html#copy-paste-and-paste-special",
+    "title": "1  Chapter 1: Getting Oriented in Excel",
+    "section": "1.5 1.3 Copy, Paste, and Paste Special",
+    "text": "1.5 1.3 Copy, Paste, and Paste Special\nRegular copy and paste (Ctrl+C, Ctrl+V) copies everything about a cell: its formula, its formatting, all of it. Most of the time that’s exactly what you want, especially combined with the fill handle from the last section.\nSometimes it isn’t. Paste Special (right-click a cell after copying, or Ctrl+Alt+V) lets you choose exactly what gets pasted:\n\n\n\n\n\n\n\n\nOption\nWhat it pastes\nWhen to use it\n\n\n\n\nValues Only\nThe calculated result as a plain number, no formula behind it\n“Freezing” a number in place, say, this month’s Total Value, before next month’s data changes the formula underneath it\n\n\nFormulas Only\nThe formula logic, without the source cell’s formatting\nThe destination cells already look the way you want\n\n\nFormats Only\nJust the appearance (fill color, borders, number format)\nYou want matching style without touching what’s already in the destination cells\n\n\n\n\n\n\nThe Paste Special dialog box with Values, Formulas, and Formats options visible.\n\n\n\n\n\n\n\n\nTipTry It\n\n\n\nCopy the completed Total Value column on Gear Inventory. Use Paste Special (Values Only) to paste it into an empty column further to the right. Then change one of the Quantity Owned numbers and watch: the original Total Value column updates, but your pasted-values copy doesn’t, because it’s no longer connected to a formula at all.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1: Getting Oriented in Excel</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter-01-excel-intro.html#cell-references-relative-absolute-and-mixed",
+    "href": "chapters/chapter-01-excel-intro.html#cell-references-relative-absolute-and-mixed",
+    "title": "1  Chapter 1: Getting Oriented in Excel",
+    "section": "1.6 1.4 Cell References: Relative, Absolute, and Mixed",
+    "text": "1.6 1.4 Cell References: Relative, Absolute, and Mixed\nWhen you copy a formula from one cell to another, Excel usually shifts its cell references to match, that’s called a relative reference, and it’s the default. It’s also exactly what makes AutoFill useful: when you drag =C5*D5 down to row 6, Excel automatically adjusts it to =C6*D6, not because it’s guessing, but because a relative reference describes a position relative to the formula’s own cell, not a fixed address.\nThat’s usually what you want, but not always. Look at the Campus Fundraising tab: the Equipment Transport Fee ($150) lives in a single cell, D3, and every campus’s Net Revenue formula needs to subtract that same fee. If you wrote =B8-D3 for Storrs and then AutoFilled it down to Hartford, Excel would shift it to =B9-D4, and D4 isn’t the transport fee, it’s the Fundraising Goal. Your formula would silently reference the wrong cell.\nThis is what an absolute reference solves. Adding dollar signs, $D$3, locks both the column and the row, so no matter where you copy the formula, it always points at that exact cell. The correct formula for Storrs’s Net Revenue is =B8-$D$3, and now AutoFilling it down all five campus rows keeps referencing the transport fee correctly every time.\nThere’s a middle option too: a mixed reference locks only the column ($D3) or only the row (D$3), useful when you’re copying a formula both across and down a table and only one direction should stay fixed. You won’t need it in this chapter’s project, but you’ll see it again once you build multi-directional tables in Chapter 2.\n\n\n\n\n\n\n\n\nType\nPattern\nWhat happens when copied\n\n\n\n\nRelative\nD3\nBoth column and row shift to match the new location\n\n\nAbsolute\n$D$3\nNothing shifts, always points at the same cell\n\n\nMixed\n$D3 or D$3\nOnly the row, or only the column, stays fixed\n\n\n\nThere’s one catch: Net Revenue needs Total Revenue to already exist, and building Total Revenue properly is a section 1.6 skill (SUMIF) you haven’t met yet. Don’t let that block you, for now, build Total Revenue the slow way you already know: for Storrs, add up its four rental-category revenues by hand, ='Rentals Revenue'!E5+'Rentals Revenue'!E6+'Rentals Revenue'!E7+'Rentals Revenue'!E8. Repeat for each campus. It’s tedious on purpose, section 1.6 replaces this with one clean SUMIF formula, and the tedium here is exactly why that upgrade will feel like a relief.\n\n\n\n\n\n\nTipTry It\n\n\n\nBuild Total Revenue for all five campuses the slow way described above. Then build Net Revenue for Storrs using an absolute reference to the Transport Fee cell, and AutoFill it down through Avery Point. Then, on a scratch cell somewhere, build Net Revenue again with a plain relative reference instead and AutoFill that down too, watch it break. This is the single most common mistake in cell-reference practice, worth seeing happen on purpose here rather than for the first time on a graded project.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1: Getting Oriented in Excel</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter-01-excel-intro.html#function-fundamentals-a-tour-of-four-function-families",
+    "href": "chapters/chapter-01-excel-intro.html#function-fundamentals-a-tour-of-four-function-families",
+    "title": "1  Chapter 1: Getting Oriented in Excel",
+    "section": "1.7 1.5 Function Fundamentals: A Tour of Four Function Families",
+    "text": "1.7 1.5 Function Fundamentals: A Tour of Four Function Families\nWhere the formulas in the last few sections were built out of raw math operators, a function is closer to a pre-made calculator for one specific, repeatable task. Someone already solved “add up a long list of numbers” or “find the largest value in a range,” and packaged that solution behind a name you can call whenever you need it. A function’s arguments are its inputs, the specific cells or values it needs to do its job for you this time. =SUM(C5:C12) is a function, sum this range; =C5+C6+C7 is a formula built from raw arithmetic that happens to do the same thing for a short list. As lists get longer, functions save you from typing an increasingly unreasonable string of plus signs, and as tasks get more specific (a conditional lookup, a tiered rate, a date calculation), a function often does something raw arithmetic can’t do at all.\n\n1.7.1 Multiple ways to insert a function\nJust like formulas, there’s more than one way to get a function into a cell:\n\nRibbon quick buttons. The AutoSum button (the Σ symbol on both the Home and Formulas tabs) has a dropdown offering SUM, AVERAGE, COUNT, MAX, and MIN, the handful of functions used constantly enough to deserve one click instead of typing.\nThe Insert Function dialog box. Click the fx button next to the formula bar to open it. It lets you search for a function by what you’re trying to do, browse by category, and once you pick one, it hands you off to the Function Arguments dialog, which walks you through each argument one at a time with a description of what it expects. Genuinely useful for a function you don’t use often enough to remember its argument order.\nType it manually. Once you know a function’s name and argument order, typing =XLOOKUP( directly is often fastest, and formula AutoComplete will suggest matching function names and remind you of the argument order as you type.\n\nOne more thing worth knowing exists, even though it’s not this chapter’s focus: functions can be nested, one function used as an argument inside another (=IF(SUM(C5:C8)&gt;1000,\"High\",\"Standard\"), for example). You’ll work with nesting more deliberately later in the course; for now, just recognize it as a feature Excel supports rather than something unusual if you happen to see it.\nExcel organizes its functions into families by purpose. Four are relevant here:\nDate & Time functions handle anything involving dates. =TODAY() returns the current date (and takes no arguments, notice the empty parentheses, still required). Subtracting one date cell from another, as you now know from 1.1b, gives you a plain number of days.\nLogical functions make decisions. The one you’ll use constantly is IF, which takes a condition, a value if that condition is true, and a value if it’s false: for example, =IF(E5&gt;1000,\"High Value\",\"Standard\") checks whether a cell exceeds 1000 and returns one label or the other. You’ll use IF for real on the Campus Fundraising tab in section 1.7, once the numbers it needs to compare actually exist, but the pattern is exactly the same no matter what you’re checking.\nFinancial functions evaluate money over time, think loan payments, investment growth, or the present value of a future amount. This chapter only asks you to recognize that this family exists and try one simple example; full treatment (PV, FV, NPV) is Chapter 3’s job, once you have more reference-handling practice under your belt.\nMath & Trig functions cover everyday numeric cleanup: ROUND (round to a specified number of decimal places), ROUNDUP and ROUNDDOWN (round in a specific direction regardless of the normal rounding rule), and ABS (absolute value, strips a negative sign). Small, unglamorous, and useful almost every time you build a real workbook.\n\n\n\n\n\n\n\n\nFamily\nExample function\nWhat it does\n\n\n\n\nDate & Time\nTODAY()\nReturns the current date\n\n\nLogical\nIF(condition, if_true, if_false)\nReturns one of two values based on a condition\n\n\nFinancial\nPV, FV, NPV (Chapter 3)\nEvaluates money over time\n\n\nMath & Trig\nROUND, ABS\nEveryday numeric cleanup\n\n\n\n\n\n\n\n\n\nTipTry It\n\n\n\nOn Gear Inventory, in any empty cell, practice IF on data you already have: flag whether each item’s Total Value is above $1,000 (“High Value”) or not (“Standard”). This is just practice, not a permanent column, the real use of IF in this chapter comes back in section 1.7 once Total Funds Raised is finished on Campus Fundraising.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1: Getting Oriented in Excel</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter-01-excel-intro.html#everyday-data-analysis-functions",
+    "href": "chapters/chapter-01-excel-intro.html#everyday-data-analysis-functions",
+    "title": "1  Chapter 1: Getting Oriented in Excel",
+    "section": "1.8 1.6 Everyday Data Analysis Functions",
+    "text": "1.8 1.6 Everyday Data Analysis Functions\nThis section is where Excel starts to feel less like a calculator and more like an analysis tool.\nCOUNT counts cells containing numbers; COUNTA counts cells containing anything at all (numbers or text); COUNTIF counts cells that meet a condition, =COUNTIF(G8:G12,\"Yes\") counts how many campuses have “Yes” in their Hit Goal? column.\nAVERAGE, MAX, and MIN do exactly what they say, applied to a range: the mean, the largest value, and the smallest value.\nSUMIF is a conditional total: sum a range, but only for rows matching a condition somewhere else. This is the workhorse of the Campus Fundraising tab. Total Revenue for Storrs is built entirely from the twenty-row rental log on the Rentals Revenue tab:\n=SUMIF('Rentals Revenue'!A:A, A8, 'Rentals Revenue'!E:E)\nRead this from the inside out: look through the Campus column on the Rentals Revenue tab, find every row matching this row’s campus (A8, “Storrs”), and total up the Revenue column for just those matching rows. One formula does what section 1.4 made you do as four separate additions.\nReplace your manual-addition Total Revenue from section 1.4 with this SUMIF formula now. Notice what happens to Net Revenue right beside it: nothing breaks, it just quietly recalculates to the correct value, because it referenced the Total Revenue cell instead of a typed-in number. That’s the entire argument for formulas over hardcoded values, made visible in one small moment.\n\n\n\n\n\n\nTipTry It\n\n\n\nReplace Total Revenue for all five campuses with SUMIF. The four summary cells underneath the table (Average, Highest, and Lowest Total Funds Raised, and how many campuses hit their goal) reference columns that don’t exist yet, hold off on those until section 1.7 finishes the table.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1: Getting Oriented in Excel</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter-01-excel-intro.html#putting-it-together-named-ranges-and-a-first-look-at-lookups",
+    "href": "chapters/chapter-01-excel-intro.html#putting-it-together-named-ranges-and-a-first-look-at-lookups",
+    "title": "1  Chapter 1: Getting Oriented in Excel",
+    "section": "1.9 1.7 Putting It Together: Named Ranges and a First Look at Lookups",
+    "text": "1.9 1.7 Putting It Together: Named Ranges and a First Look at Lookups\nTwo new ideas here, both slightly beyond this chapter’s strict function list, but both necessary for the project at the end of it.\nFirst, named ranges. Instead of referencing $I$8:$I$12 in a formula, you can select that range, type a name into the Name Box (say, RevenueLevel), and press Enter. From then on, any formula can refer to RevenueLevel instead of the cell address, which is both easier to read and harder to get wrong when copying formulas around. The Sponsor Match Tiers table on the Campus Fundraising tab has two ranges worth naming this way: the revenue thresholds (RevenueLevel) and their matching rates (MatchRate).\nSecond, a first look at XLOOKUP, a function that searches through one range and returns a corresponding value from another. The Sponsor Match Tiers table works in tiers: $0 and up earns no match, $300 and up earns 3%, $600 and up earns 5%, and so on. A campus’s Net Revenue won’t usually land exactly on one of those numbers, so the lookup needs to find the next-smallest threshold it qualifies for. That’s what the fifth argument of XLOOKUP controls:\n=XLOOKUP(C8, RevenueLevel, MatchRate, , -1)\nRead it as: take Storrs’s Net Revenue (C8), search for it in RevenueLevel, and return the corresponding value from MatchRate. The -1 tells Excel to use approximate match, if there’s no exact number matching C8, fall back to the next-smallest threshold instead of returning an error. You’ll go much deeper on lookup and reference functions, XMATCH, INDEX, UNIQUE, SORT, in Chapter 3; this is just enough to get the fundraising math working.\n\n\n\nThe formula bar showing a completed XLOOKUP formula referencing the named ranges RevenueLevel and MatchRate.\n\n\nThis section also circles back to Gear Inventory for one more idea: SUMPRODUCT. You already built Total Value row by row (Quantity times Replacement Value, one formula per item, then presumably a SUM underneath). SUMPRODUCT gets you the exact same grand total in a single formula, multiplying two ranges together and summing the results all at once:\n=SUMPRODUCT(C5:C12, D5:D12)\nNo helper column required. Building both versions side by side is the point: once you see they produce the identical number, SUMPRODUCT stops being an arbitrary new name to memorize and starts being obviously useful, a shortcut for something you already know how to do the long way.\n\n\n\n\n\n\nTipTry It\n\n\n\nName the two Sponsor Match Tiers ranges as described in the workbook, then build Sponsor Match Rate, Sponsor Match $ (Net Revenue times Sponsor Match Rate), and Total Funds Raised (Net Revenue plus Sponsor Match \\() for all five campuses. With Total Funds Raised finally in place, go back and finish two things left over from earlier: Hit Goal? from section 1.5, `=IF(F8&gt;=\\)D$4,“Yes”,“No”)`, comparing it to the Fundraising Goal cell (an absolute reference again, same reasoning as Net Revenue), and the four summary cells held over from section 1.6 (Average, Highest, and Lowest Total Funds Raised, and a COUNTIF of how many campuses hit their goal). Separately, add a SUMPRODUCT formula to Gear Inventory and confirm it matches the total you already found the long way.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1: Getting Oriented in Excel</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter-01-excel-intro.html#bringing-it-to-a-business-problem",
+    "href": "chapters/chapter-01-excel-intro.html#bringing-it-to-a-business-problem",
+    "title": "1  Chapter 1: Getting Oriented in Excel",
+    "section": "1.10 1.8 Bringing It to a Business Problem",
+    "text": "1.10 1.8 Bringing It to a Business Problem\nEverything up to this point has been mechanics. This section is where it becomes a business question.\nHusky Outdoors Club’s treasurer wants a recommendation, not a spreadsheet. With your Campus Fundraising table complete, look at what it’s actually telling you: which campus generated the most funds, which one fell short of its goal, and whether the sponsor match meaningfully changed any campus’s outcome, or whether it mostly rewarded a campus that would have hit its goal anyway. Is the $150 transport fee worth paying at every campus, or does it wipe out the smaller locations’ returns?\nWrite your answer directly into the Reflection prompt at the bottom of the Campus Fundraising tab. There’s no single correct recommendation here, what matters is that your answer is actually grounded in the numbers you built, not a guess.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1: Getting Oriented in Excel</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/chapter-01-excel-intro.html#chapter-wrap-up",
+    "href": "chapters/chapter-01-excel-intro.html#chapter-wrap-up",
+    "title": "1  Chapter 1: Getting Oriented in Excel",
+    "section": "1.11 Chapter wrap-up",
+    "text": "1.11 Chapter wrap-up\nYou now have every tool this chapter set out to give you: navigating and formatting a workbook, understanding what Excel is actually storing behind a display format, writing formulas three different ways, copying them correctly (including when to use Paste Special), locking references that need to stay fixed, choosing the right function for a task across four families, summarizing data with conditional functions, and building your first named-range lookup.\nThe Applied Project that follows this chapter (placeholder name, easy to swap for something with more personality) asks you to put all of it together fresh, on a different scenario, a commission-and-bonus workbook structurally similar to Husky Outdoors Club’s fundraising math, but with its own numbers and its own story. It’s one project, not a scaffolded version followed by a separate independent one. You submit, get specific per-cell feedback from the course’s autograder, and revise and resubmit as many times as you need before it’s due.\n\n1.11.1 Function cheat sheet\n\n\n\n\n\n\n\n\nFunction\nSyntax\nWhat it does\n\n\n\n\nSUM\n=SUM(range)\nAdds all numbers in a range\n\n\nIF\n=IF(condition, if_true, if_false)\nReturns one of two values based on a condition\n\n\nSUMIF\n=SUMIF(range, criteria, sum_range)\nAdds values in sum_range where range matches criteria\n\n\nCOUNT\n=COUNT(range)\nCounts cells containing numbers\n\n\nCOUNTA\n=COUNTA(range)\nCounts cells containing anything at all\n\n\nCOUNTIF\n=COUNTIF(range, criteria)\nCounts cells matching a condition\n\n\nAVERAGE\n=AVERAGE(range)\nReturns the mean of a range\n\n\nMAX / MIN\n=MAX(range) / =MIN(range)\nReturns the largest / smallest value\n\n\nROUND\n=ROUND(number, digits)\nRounds a number to a specified number of decimal places\n\n\nXLOOKUP\n=XLOOKUP(lookup_value, lookup_array, return_array, , match_mode)\nSearches one range and returns a corresponding value from another\n\n\nSUMPRODUCT\n=SUMPRODUCT(range1, range2)\nMultiplies two ranges element-by-element and sums the results\n\n\n\n\n\n1.11.2 Key terms glossary\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nWorkbook\nThe entire Excel file, made up of one or more worksheets\n\n\nWorksheet\nA single tab within a workbook, a grid of cells\n\n\nCell\nOne box in a worksheet, addressed by column letter and row number\n\n\nRange\nA group of selected cells, like B5:B12\n\n\nRibbon\nThe tabbed toolbar across the top of Excel\n\n\nName Box\nThe box above column A showing, or letting you jump to, the current cell address\n\n\nFill handle\nThe small square at a cell’s bottom-right corner, dragged to extend a pattern or formula\n\n\nAutoFill\nThe feature that extends a pattern or formula when you drag the fill handle\n\n\nSerial date number\nThe number Excel actually stores for a date, counted from a fixed starting point\n\n\nFormula\nA calculation you build yourself, starting with =\n\n\nFunction\nA named, ready-made formula for a specific task, like SUM or IF\n\n\nArgument\nAn input a function needs to do its job\n\n\nPaste Special\nA paste option that lets you choose values, formulas, or formatting only\n\n\nRelative reference\nA cell reference that shifts when a formula is copied\n\n\nAbsolute reference\nA cell reference (with $) that stays fixed when a formula is copied\n\n\nMixed reference\nA reference that locks only its row or only its column\n\n\nNamed range\nA plain-language name assigned to a cell range, usable in formulas",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1: Getting Oriented in Excel</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html",
+    "href": "chapters/appendix-a-excel-quick-reference.html",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "",
+    "text": "A.1 Cell references\nA condensed reference for everything covered across the Excel unit (Chapters 1-3), function name, syntax, and purpose, in the spirit of a fold-out study guide rather than a chapter to read start to finish. The Ch. column shows which chapter formally introduces each item, so this page also works as a map of the whole unit, useful even before you’ve reached a later chapter.\nReminder before anything else: a formula always starts with =, and Excel follows PEMDAS (parentheses, exponents, multiplication/division, addition/subtraction) for order of operations.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html#cell-references",
+    "href": "chapters/appendix-a-excel-quick-reference.html#cell-references",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "",
+    "text": "Type\nPattern\nBehavior when copied\nCh.\n\n\n\n\nRelative\nA1\nShifts to match the new location\n1\n\n\nAbsolute\n$A$1\nLocked, never shifts\n1\n\n\nMixed\n$A1 or A$1\nOnly the column, or only the row, stays fixed\n1",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html#copy-paste-and-formatting",
+    "href": "chapters/appendix-a-excel-quick-reference.html#copy-paste-and-formatting",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "A.2 Copy, paste, and formatting",
+    "text": "A.2 Copy, paste, and formatting\n\n\n\n\n\n\n\n\nTool\nWhat it does\nCh.\n\n\n\n\nAutoFill (fill handle)\nExtends a pattern or copies a formula down/across, adjusting relative references\n1\n\n\nPaste Special: Values Only\nPastes the result as a plain number, no formula\n1\n\n\nPaste Special: Formulas Only\nPastes formula logic, not source formatting\n1\n\n\nPaste Special: Formats Only\nPastes appearance only (fill, borders, number format)\n1\n\n\nConditional Formatting\nChanges a cell’s appearance automatically based on its value\n2",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html#common-error-values",
+    "href": "chapters/appendix-a-excel-quick-reference.html#common-error-values",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "A.3 Common error values",
+    "text": "A.3 Common error values\n\n\n\n\n\n\n\nError\nMeaning\n\n\n\n\n#REF!\nA cell the formula depended on was deleted\n\n\n#DIV/0!\nDivision by zero or a blank cell\n\n\n#NAME?\nExcel doesn’t recognize something typed, often a misspelled function",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html#logical-functions",
+    "href": "chapters/appendix-a-excel-quick-reference.html#logical-functions",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "A.4 Logical functions",
+    "text": "A.4 Logical functions\n\n\n\n\n\n\n\n\n\nFunction\nSyntax\nPurpose\nCh.\n\n\n\n\nIF\n=IF(logical_test, value_if_true, [value_if_false])\nReturns one of two values based on a condition\n1\n\n\nAND\n=AND(logical1, [logical2], ...)\nTrue only if every condition is true\n3\n\n\nOR\n=OR(logical1, [logical2], ...)\nTrue if any condition is true\n3\n\n\nIFS\n=IFS(test1, value1, [test2, value2], ...)\nChecks multiple conditions in order without nesting IFs\n3",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html#lookup-reference-functions",
+    "href": "chapters/appendix-a-excel-quick-reference.html#lookup-reference-functions",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "A.5 Lookup & reference functions",
+    "text": "A.5 Lookup & reference functions\n\n\n\n\n\n\n\n\n\nFunction\nSyntax\nPurpose\nCh.\n\n\n\n\nXLOOKUP\n=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])\nSearches one range, returns a corresponding value from another\n1\n\n\nXMATCH\n=XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])\nReturns a position within a range, not a value\n3\n\n\nINDEX\n=INDEX(array, row_num, [column_num])\nReturns the value at a given row/column position\n3\n\n\nUNIQUE\n=UNIQUE(array, [by_col], [exactly_once])\nReturns a list of distinct values\n3\n\n\nSORT\n=SORT(array, [sort_index], [sort_order], [by_col])\nReturns a sorted version of a range\n3\n\n\n\nGotcha: for XLOOKUP’s match_mode, 0 (default) requires an exact match, -1 falls back to the next-smallest item if there’s no exact match, and 1 falls back to the next-largest.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html#math-stat-and-everyday-cleanup-functions",
+    "href": "chapters/appendix-a-excel-quick-reference.html#math-stat-and-everyday-cleanup-functions",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "A.6 Math, stat, and everyday cleanup functions",
+    "text": "A.6 Math, stat, and everyday cleanup functions\n\n\n\n\n\n\n\n\n\nFunction\nSyntax\nPurpose\nCh.\n\n\n\n\nSUM\n=SUM(number1, [number2], ...)\nAdds all numbers in a range\n1\n\n\nSUMIF\n=SUMIF(range, criteria, [sum_range])\nConditional sum; sum_range is last and optional\n1\n\n\nSUMIFS\n=SUMIFS(sum_range, criteria_range1, criteria1, ...)\nConditional sum, multiple conditions; sum_range is first\n3\n\n\nSUMPRODUCT\n=SUMPRODUCT(array1, [array2], ...)\nMultiplies ranges element-by-element, then sums\n1\n\n\nAVERAGE\n=AVERAGE(number1, [number2], ...)\nMean of a range\n1\n\n\nAVERAGEIFS\n=AVERAGEIFS(average_range, criteria_range1, criteria1, ...)\nConditional average, multiple conditions; average_range is first\n3\n\n\nCOUNT\n=COUNT(value1, [value2], ...)\nCounts cells containing numbers\n1\n\n\nCOUNTA\n=COUNTA(value1, [value2], ...)\nCounts cells containing anything\n1\n\n\nCOUNTIF\n=COUNTIF(range, criteria)\nCounts cells matching one condition\n1\n\n\nMAX / MIN\n=MAX(number1, ...) / =MIN(number1, ...)\nLargest / smallest value\n1\n\n\nMEDIAN\n=MEDIAN(number1, ...)\nMiddle value of a range\n1\n\n\nMODE.SNGL\n=MODE.SNGL(number1, ...)\nMost frequently occurring value (classic MODE still works)\n1\n\n\nSTDEV.P\n=STDEV.P(number1, ...)\nPopulation standard deviation\n3\n\n\nROUND\n=ROUND(number, num_digits)\nRounds to a specified number of decimal places\n1\n\n\nROUNDUP / ROUNDDOWN\n=ROUNDUP(number, num_digits) / =ROUNDDOWN(...)\nRounds in a specific direction regardless of the normal rule\n1\n\n\nABS\n=ABS(number)\nStrips a negative sign\n1\n\n\n\nGotcha: SUMIF and SUMIFS put the range being summed in different argument positions, last (and optional) in SUMIF, first (and required) in SUMIFS. Mixing them up is one of the most common formula errors.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html#date-time-functions",
+    "href": "chapters/appendix-a-excel-quick-reference.html#date-time-functions",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "A.7 Date & time functions",
+    "text": "A.7 Date & time functions\n\n\n\n\n\n\n\n\n\nFunction\nSyntax\nPurpose\nCh.\n\n\n\n\nTODAY\n=TODAY()\nCurrent date (no arguments, parentheses still required)\n1\n\n\nNOW\n=NOW()\nCurrent date and time\n3\n\n\n\nReminder: a date is a stored serial number counting days from a fixed start point, subtracting two dates gives a plain integer (days between them), not a special “date” result.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html#financial-functions",
+    "href": "chapters/appendix-a-excel-quick-reference.html#financial-functions",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "A.8 Financial functions",
+    "text": "A.8 Financial functions\n\n\n\n\n\n\n\n\n\nFunction\nSyntax\nPurpose\nCh.\n\n\n\n\nPV\n=PV(rate, nper, pmt, [fv], [type])\nPresent value of a future amount\n3\n\n\nFV\n=FV(rate, nper, pmt, [pv], [type])\nFuture value of a series of payments\n3\n\n\nNPV\n=NPV(rate, value1, [value2], ...)\nNet present value of a series of cash flows\n3",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html#text-functions",
+    "href": "chapters/appendix-a-excel-quick-reference.html#text-functions",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "A.9 Text functions",
+    "text": "A.9 Text functions\n\n\n\n\n\n\n\n\n\nFunction\nSyntax\nPurpose\nCh.\n\n\n\n\nTEXT\n=TEXT(value, format_text)\nConverts a number to text in a specified format\n3\n\n\nUPPER\n=UPPER(text)\nConverts text to all caps\n3\n\n\nREPT\n=REPT(text, number_times)\nRepeats text a given number of times\n3\n\n\nCONCAT\n=CONCAT(text1, [text2], ...)\nJoins text from multiple cells\n1\n\n\nTEXTJOIN\n=TEXTJOIN(delimiter, ignore_empty, text1, [text2], ...)\nJoins text with a delimiter between items\n3",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html#database-functions",
+    "href": "chapters/appendix-a-excel-quick-reference.html#database-functions",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "A.10 Database functions",
+    "text": "A.10 Database functions\n\n\n\n\n\n\n\n\n\nFunction\nSyntax\nPurpose\nCh.\n\n\n\n\nDSUM\n=DSUM(database, field, criteria)\nSums a field across records matching a criteria range\n3\n\n\nDAVERAGE\n=DAVERAGE(database, field, criteria)\nAverages a field across records matching a criteria range\n3\n\n\n\nBoth require a separate criteria range set up above or beside the data (headers matching the database’s field names, with conditions typed underneath), not just a simple range like SUMIF.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html#named-ranges",
+    "href": "chapters/appendix-a-excel-quick-reference.html#named-ranges",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "A.11 Named ranges",
+    "text": "A.11 Named ranges\nSelect a range, type a name into the Name Box, press Enter. Use the name directly in formulas afterward (=XLOOKUP(C8, RevenueLevel, MatchRate, , -1) instead of =XLOOKUP(C8, $I$8:$I$12, $J$8:$J$12, , -1)). Ch. 1.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html#chapter-2-highlights-visualization-pivottables",
+    "href": "chapters/appendix-a-excel-quick-reference.html#chapter-2-highlights-visualization-pivottables",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "A.12 Chapter 2 highlights: visualization & PivotTables",
+    "text": "A.12 Chapter 2 highlights: visualization & PivotTables\n\n\n\n\n\n\n\nConcept\nQuick note\n\n\n\n\nPivotTable\nDrag fields into Rows, Columns, Values, and Filters to summarize large datasets interactively\n\n\nPivotChart\nA chart built directly from a PivotTable, updates automatically when the PivotTable changes\n\n\nChart choice\nLine = trend over time; bar/column = comparison across categories; scatter = relationship between two variables; pie = parts of a whole, use sparingly\n\n\nTufte’s principle\nMaximize the data-ink ratio, every mark on a chart should carry information, avoid “chart junk”\n\n\nHealy’s addition\nDesign for accessibility and honest defaults, context matters as much as precision",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html#troubleshooting-tool",
+    "href": "chapters/appendix-a-excel-quick-reference.html#troubleshooting-tool",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "A.13 Troubleshooting tool",
+    "text": "A.13 Troubleshooting tool\nWatch Window (Formulas tab): monitors specific cells’ values while you’re working elsewhere in a large workbook, useful for checking a formula’s result without scrolling back to it. Ch. 3.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/appendix-a-excel-quick-reference.html#keyboard-shortcuts",
+    "href": "chapters/appendix-a-excel-quick-reference.html#keyboard-shortcuts",
+    "title": "Appendix A — Appendix A: Excel Quick Reference",
+    "section": "A.14 Keyboard shortcuts",
+    "text": "A.14 Keyboard shortcuts\n\n\n\nShortcut\nAction\n\n\n\n\nCtrl+Home\nJump to cell A1\n\n\nCtrl+Arrow\nJump to the edge of a data block\n\n\nCtrl+C / Ctrl+V\nCopy / paste\n\n\nCtrl+Alt+V\nPaste Special\n\n\nClick, then Shift+Click\nSelect a range between two cells",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix A: Excel Quick Reference</span>"
+    ]
+  }
+]
