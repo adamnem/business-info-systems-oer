@@ -1,0 +1,28 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Business Information Systems"
+  subtitle: "An Open Textbook"
+  author: "Adam Nemeroff"
+  date: today
+  chapters:
+    - index.qmd
+    - chapters/chapter-01-excel-intro.qmd
+  appendices:
+    - chapters/appendix-a-excel-quick-reference.qmd
+  page-footer:
+    left: "Business Information Systems (open textbook draft)"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true
+    code-block-bg: true
+  # Uncomment once you want PDF/EPUB builds too (requires a LaTeX install for PDF):
+  # pdf:
+  #   documentclass: scrbook
+  # epub:
+  #   cover-image: assets/images/cover.png

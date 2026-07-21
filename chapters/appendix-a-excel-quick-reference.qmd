@@ -1,0 +1,141 @@
+---
+title: "Appendix A: Excel Quick Reference"
+---
+
+A condensed reference for everything covered across the Excel unit (Chapters 1-3), function name, syntax, and purpose, in the spirit of a fold-out study guide rather than a chapter to read start to finish. The **Ch.** column shows which chapter formally introduces each item, so this page also works as a map of the whole unit, useful even before you've reached a later chapter.
+
+Reminder before anything else: a formula always starts with `=`, and Excel follows **PEMDAS** (parentheses, exponents, multiplication/division, addition/subtraction) for order of operations.
+
+## Cell references
+
+| Type | Pattern | Behavior when copied | Ch. |
+|---|---|---|---|
+| Relative | `A1` | Shifts to match the new location | 1 |
+| Absolute | `$A$1` | Locked, never shifts | 1 |
+| Mixed | `$A1` or `A$1` | Only the column, or only the row, stays fixed | 1 |
+
+## Copy, paste, and formatting
+
+| Tool | What it does | Ch. |
+|---|---|---|
+| AutoFill (fill handle) | Extends a pattern or copies a formula down/across, adjusting relative references | 1 |
+| Paste Special: Values Only | Pastes the result as a plain number, no formula | 1 |
+| Paste Special: Formulas Only | Pastes formula logic, not source formatting | 1 |
+| Paste Special: Formats Only | Pastes appearance only (fill, borders, number format) | 1 |
+| Conditional Formatting | Changes a cell's appearance automatically based on its value | 2 |
+
+## Common error values
+
+| Error | Meaning |
+|---|---|
+| `#REF!` | A cell the formula depended on was deleted |
+| `#DIV/0!` | Division by zero or a blank cell |
+| `#NAME?` | Excel doesn't recognize something typed, often a misspelled function |
+
+## Logical functions
+
+| Function | Syntax | Purpose | Ch. |
+|---|---|---|---|
+| IF | `=IF(logical_test, value_if_true, [value_if_false])` | Returns one of two values based on a condition | 1 |
+| AND | `=AND(logical1, [logical2], ...)` | True only if every condition is true | 3 |
+| OR | `=OR(logical1, [logical2], ...)` | True if any condition is true | 3 |
+| IFS | `=IFS(test1, value1, [test2, value2], ...)` | Checks multiple conditions in order without nesting IFs | 3 |
+
+## Lookup & reference functions
+
+| Function | Syntax | Purpose | Ch. |
+|---|---|---|---|
+| XLOOKUP | `=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])` | Searches one range, returns a corresponding value from another | 1 |
+| XMATCH | `=XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])` | Returns a *position* within a range, not a value | 3 |
+| INDEX | `=INDEX(array, row_num, [column_num])` | Returns the value at a given row/column position | 3 |
+| UNIQUE | `=UNIQUE(array, [by_col], [exactly_once])` | Returns a list of distinct values | 3 |
+| SORT | `=SORT(array, [sort_index], [sort_order], [by_col])` | Returns a sorted version of a range | 3 |
+
+**Gotcha:** for XLOOKUP's `match_mode`, `0` (default) requires an exact match, `-1` falls back to the next-*smallest* item if there's no exact match, and `1` falls back to the next-*largest*.
+
+## Math, stat, and everyday cleanup functions
+
+| Function | Syntax | Purpose | Ch. |
+|---|---|---|---|
+| SUM | `=SUM(number1, [number2], ...)` | Adds all numbers in a range | 1 |
+| SUMIF | `=SUMIF(range, criteria, [sum_range])` | Conditional sum; `sum_range` is last and optional | 1 |
+| SUMIFS | `=SUMIFS(sum_range, criteria_range1, criteria1, ...)` | Conditional sum, multiple conditions; `sum_range` is **first** | 3 |
+| SUMPRODUCT | `=SUMPRODUCT(array1, [array2], ...)` | Multiplies ranges element-by-element, then sums | 1 |
+| AVERAGE | `=AVERAGE(number1, [number2], ...)` | Mean of a range | 1 |
+| AVERAGEIFS | `=AVERAGEIFS(average_range, criteria_range1, criteria1, ...)` | Conditional average, multiple conditions; `average_range` is **first** | 3 |
+| COUNT | `=COUNT(value1, [value2], ...)` | Counts cells containing numbers | 1 |
+| COUNTA | `=COUNTA(value1, [value2], ...)` | Counts cells containing anything | 1 |
+| COUNTIF | `=COUNTIF(range, criteria)` | Counts cells matching one condition | 1 |
+| MAX / MIN | `=MAX(number1, ...)` / `=MIN(number1, ...)` | Largest / smallest value | 1 |
+| MEDIAN | `=MEDIAN(number1, ...)` | Middle value of a range | 1 |
+| MODE.SNGL | `=MODE.SNGL(number1, ...)` | Most frequently occurring value (classic `MODE` still works) | 1 |
+| STDEV.P | `=STDEV.P(number1, ...)` | Population standard deviation | 3 |
+| ROUND | `=ROUND(number, num_digits)` | Rounds to a specified number of decimal places | 1 |
+| ROUNDUP / ROUNDDOWN | `=ROUNDUP(number, num_digits)` / `=ROUNDDOWN(...)` | Rounds in a specific direction regardless of the normal rule | 1 |
+| ABS | `=ABS(number)` | Strips a negative sign | 1 |
+
+**Gotcha:** SUMIF and SUMIFS put the range being summed in different argument positions, last (and optional) in SUMIF, first (and required) in SUMIFS. Mixing them up is one of the most common formula errors.
+
+## Date & time functions
+
+| Function | Syntax | Purpose | Ch. |
+|---|---|---|---|
+| TODAY | `=TODAY()` | Current date (no arguments, parentheses still required) | 1 |
+| NOW | `=NOW()` | Current date and time | 3 |
+
+Reminder: a date is a stored serial number counting days from a fixed start point, subtracting two dates gives a plain integer (days between them), not a special "date" result.
+
+## Financial functions
+
+| Function | Syntax | Purpose | Ch. |
+|---|---|---|---|
+| PV | `=PV(rate, nper, pmt, [fv], [type])` | Present value of a future amount | 3 |
+| FV | `=FV(rate, nper, pmt, [pv], [type])` | Future value of a series of payments | 3 |
+| NPV | `=NPV(rate, value1, [value2], ...)` | Net present value of a series of cash flows | 3 |
+
+## Text functions
+
+| Function | Syntax | Purpose | Ch. |
+|---|---|---|---|
+| TEXT | `=TEXT(value, format_text)` | Converts a number to text in a specified format | 3 |
+| UPPER | `=UPPER(text)` | Converts text to all caps | 3 |
+| REPT | `=REPT(text, number_times)` | Repeats text a given number of times | 3 |
+| CONCAT | `=CONCAT(text1, [text2], ...)` | Joins text from multiple cells | 1 |
+| TEXTJOIN | `=TEXTJOIN(delimiter, ignore_empty, text1, [text2], ...)` | Joins text with a delimiter between items | 3 |
+
+## Database functions
+
+| Function | Syntax | Purpose | Ch. |
+|---|---|---|---|
+| DSUM | `=DSUM(database, field, criteria)` | Sums a field across records matching a criteria range | 3 |
+| DAVERAGE | `=DAVERAGE(database, field, criteria)` | Averages a field across records matching a criteria range | 3 |
+
+Both require a separate **criteria range** set up above or beside the data (headers matching the database's field names, with conditions typed underneath), not just a simple range like SUMIF.
+
+## Named ranges
+
+Select a range, type a name into the Name Box, press Enter. Use the name directly in formulas afterward (`=XLOOKUP(C8, RevenueLevel, MatchRate, , -1)` instead of `=XLOOKUP(C8, $I$8:$I$12, $J$8:$J$12, , -1)`). Ch. 1.
+
+## Chapter 2 highlights: visualization & PivotTables
+
+| Concept | Quick note |
+|---|---|
+| PivotTable | Drag fields into Rows, Columns, Values, and Filters to summarize large datasets interactively |
+| PivotChart | A chart built directly from a PivotTable, updates automatically when the PivotTable changes |
+| Chart choice | Line = trend over time; bar/column = comparison across categories; scatter = relationship between two variables; pie = parts of a whole, use sparingly |
+| Tufte's principle | Maximize the data-ink ratio, every mark on a chart should carry information, avoid "chart junk" |
+| Healy's addition | Design for accessibility and honest defaults, context matters as much as precision |
+
+## Troubleshooting tool
+
+**Watch Window** (Formulas tab): monitors specific cells' values while you're working elsewhere in a large workbook, useful for checking a formula's result without scrolling back to it. Ch. 3.
+
+## Keyboard shortcuts
+
+| Shortcut | Action |
+|---|---|
+| Ctrl+Home | Jump to cell A1 |
+| Ctrl+Arrow | Jump to the edge of a data block |
+| Ctrl+C / Ctrl+V | Copy / paste |
+| Ctrl+Alt+V | Paste Special |
+| Click, then Shift+Click | Select a range between two cells |

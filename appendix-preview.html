@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Appendix A: Excel Quick Reference — Business Information Systems</title>
+<style>
+  :root {
+    --navy: #003C6C;
+    --gold: #E8B92E;
+    --tip-bg: #eaf7f2;
+    --tip-border: #2e9e6b;
+    --note-bg: #eef2f8;
+    --note-border: #6c86ad;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #1a1a1a; background: #fff; display: flex; min-height: 100vh;
+  }
+  nav.sidebar {
+    width: 260px; flex-shrink: 0; background: #f7f7f9; border-right: 1px solid #e3e3e6;
+    padding: 24px 18px; position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  }
+  nav.sidebar h1 { font-size: 15px; color: var(--navy); margin: 0 0 4px; }
+  nav.sidebar .subtitle { font-size: 12px; color: #666; margin-bottom: 20px; }
+  nav.sidebar .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #999; margin: 16px 0 6px; padding: 0 8px; }
+  nav.sidebar ul { list-style: none; padding: 0; margin: 0; font-size: 13.5px; }
+  nav.sidebar li { margin-bottom: 6px; }
+  nav.sidebar a { color: #333; text-decoration: none; display: block; padding: 5px 8px; border-radius: 4px; }
+  nav.sidebar a.active { background: var(--navy); color: #fff; }
+  nav.sidebar a:hover:not(.active) { background: #eceef1; }
+  main { flex: 1; max-width: 820px; margin: 0 auto; padding: 40px 48px 100px; }
+  main h1 { color: var(--navy); font-size: 30px; border-bottom: 3px solid var(--gold); padding-bottom: 12px; }
+  main h2 { color: var(--navy); font-size: 22px; margin-top: 42px; }
+  main h3 { color: #2b537d; font-size: 17px; margin-top: 30px; }
+  main p { line-height: 1.65; font-size: 15.5px; }
+  main code { background: #f2f2f4; padding: 1px 5px; border-radius: 3px; font-size: 0.9em; }
+  main pre { background: #1e1e2e; color: #e8e8e8; padding: 14px 16px; border-radius: 6px; overflow-x: auto; }
+  main pre code { background: none; color: inherit; padding: 0; }
+  main table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 14px; }
+  main th, main td { border: 1px solid #dcdde0; padding: 8px 10px; text-align: left; }
+  main th { background: var(--navy); color: #fff; }
+  main tr:nth-child(even) { background: #f8f9fa; }
+  .callout-tip, .callout-note {
+    border-left: 4px solid var(--tip-border); background: var(--tip-bg);
+    border-radius: 4px; padding: 14px 18px; margin: 20px 0;
+  }
+  .callout-note { border-left-color: var(--note-border); background: var(--note-bg); }
+  .callout-title { font-weight: 700; margin-bottom: 6px; color: var(--tip-border); }
+  .callout-note .callout-title { color: var(--note-border); }
+  .callout-tip p:last-child, .callout-note p:last-child { margin-bottom: 0; }
+  a { color: #1a5fa8; }
+  .model-banner {
+    background: #fff8e1; border: 1px solid #e8b92e; border-radius: 6px;
+    padding: 10px 16px; font-size: 13px; margin-bottom: 28px; color: #6b5100;
+  }
+</style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <h1>Business Information Systems</h1>
+  <div class="subtitle">An Open Textbook</div>
+  <ul>
+    <li><a href="#">Welcome</a></li>
+    <li><a href="preview.html" class="">Chapter 1: Getting Oriented in Excel</a></li>
+    <li style="color:#999; padding: 5px 8px;">Chapter 2 (not yet written)</li>
+    <li style="color:#999; padding: 5px 8px;">Chapter 3 (not yet written)</li>
+  </ul>
+  <div class="section-label">Appendices</div>
+  <ul>
+    <li><a href="appendix-preview.html" class="active">Appendix A: Excel Quick Reference</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="model-banner">This is a hand-built static preview standing in for a real Quarto render (Quarto's CLI couldn't be installed in this sandbox — see chat for why). Layout mimics Quarto's default book theme; the actual render will look close to this once built with real Quarto. In a real Quarto book, this page renders from the same appendices: list in _quarto.yml as any other chapter, just grouped separately in the sidebar.</div>
+  <h1>Appendix A: Excel Quick Reference</h1>
+  <p>A condensed reference for everything covered across the Excel unit (Chapters 1-3), function name, syntax, and purpose, in the spirit of a fold-out study guide rather than a chapter to read start to finish. The <strong>Ch.</strong> column shows which chapter formally introduces each item, so this page also works as a map of the whole unit, useful even before you've reached a later chapter.</p>
+<p>Reminder before anything else: a formula always starts with <code>=</code>, and Excel follows <strong>PEMDAS</strong> (parentheses, exponents, multiplication/division, addition/subtraction) for order of operations.</p>
+<h2>Cell references</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Pattern</th>
+<th>Behavior when copied</th>
+<th>Ch.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Relative</td>
+<td><code>A1</code></td>
+<td>Shifts to match the new location</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Absolute</td>
+<td><code>$A$1</code></td>
+<td>Locked, never shifts</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Mixed</td>
+<td><code>$A1</code> or <code>A$1</code></td>
+<td>Only the column, or only the row, stays fixed</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2>Copy, paste, and formatting</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What it does</th>
+<th>Ch.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AutoFill (fill handle)</td>
+<td>Extends a pattern or copies a formula down/across, adjusting relative references</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Paste Special: Values Only</td>
+<td>Pastes the result as a plain number, no formula</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Paste Special: Formulas Only</td>
+<td>Pastes formula logic, not source formatting</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Paste Special: Formats Only</td>
+<td>Pastes appearance only (fill, borders, number format)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Conditional Formatting</td>
+<td>Changes a cell's appearance automatically based on its value</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h2>Common error values</h2>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#REF!</code></td>
+<td>A cell the formula depended on was deleted</td>
+</tr>
+<tr>
+<td><code>#DIV/0!</code></td>
+<td>Division by zero or a blank cell</td>
+</tr>
+<tr>
+<td><code>#NAME?</code></td>
+<td>Excel doesn't recognize something typed, often a misspelled function</td>
+</tr>
+</tbody>
+</table>
+<h2>Logical functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Syntax</th>
+<th>Purpose</th>
+<th>Ch.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IF</td>
+<td><code>=IF(logical_test, value_if_true, [value_if_false])</code></td>
+<td>Returns one of two values based on a condition</td>
+<td>1</td>
+</tr>
+<tr>
+<td>AND</td>
+<td><code>=AND(logical1, [logical2], ...)</code></td>
+<td>True only if every condition is true</td>
+<td>3</td>
+</tr>
+<tr>
+<td>OR</td>
+<td><code>=OR(logical1, [logical2], ...)</code></td>
+<td>True if any condition is true</td>
+<td>3</td>
+</tr>
+<tr>
+<td>IFS</td>
+<td><code>=IFS(test1, value1, [test2, value2], ...)</code></td>
+<td>Checks multiple conditions in order without nesting IFs</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h2>Lookup &amp; reference functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Syntax</th>
+<th>Purpose</th>
+<th>Ch.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XLOOKUP</td>
+<td><code>=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])</code></td>
+<td>Searches one range, returns a corresponding value from another</td>
+<td>1</td>
+</tr>
+<tr>
+<td>XMATCH</td>
+<td><code>=XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])</code></td>
+<td>Returns a <em>position</em> within a range, not a value</td>
+<td>3</td>
+</tr>
+<tr>
+<td>INDEX</td>
+<td><code>=INDEX(array, row_num, [column_num])</code></td>
+<td>Returns the value at a given row/column position</td>
+<td>3</td>
+</tr>
+<tr>
+<td>UNIQUE</td>
+<td><code>=UNIQUE(array, [by_col], [exactly_once])</code></td>
+<td>Returns a list of distinct values</td>
+<td>3</td>
+</tr>
+<tr>
+<td>SORT</td>
+<td><code>=SORT(array, [sort_index], [sort_order], [by_col])</code></td>
+<td>Returns a sorted version of a range</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Gotcha:</strong> for XLOOKUP's <code>match_mode</code>, <code>0</code> (default) requires an exact match, <code>-1</code> falls back to the next-<em>smallest</em> item if there's no exact match, and <code>1</code> falls back to the next-<em>largest</em>.</p>
+<h2>Math, stat, and everyday cleanup functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Syntax</th>
+<th>Purpose</th>
+<th>Ch.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUM</td>
+<td><code>=SUM(number1, [number2], ...)</code></td>
+<td>Adds all numbers in a range</td>
+<td>1</td>
+</tr>
+<tr>
+<td>SUMIF</td>
+<td><code>=SUMIF(range, criteria, [sum_range])</code></td>
+<td>Conditional sum; <code>sum_range</code> is last and optional</td>
+<td>1</td>
+</tr>
+<tr>
+<td>SUMIFS</td>
+<td><code>=SUMIFS(sum_range, criteria_range1, criteria1, ...)</code></td>
+<td>Conditional sum, multiple conditions; <code>sum_range</code> is <strong>first</strong></td>
+<td>3</td>
+</tr>
+<tr>
+<td>SUMPRODUCT</td>
+<td><code>=SUMPRODUCT(array1, [array2], ...)</code></td>
+<td>Multiplies ranges element-by-element, then sums</td>
+<td>1</td>
+</tr>
+<tr>
+<td>AVERAGE</td>
+<td><code>=AVERAGE(number1, [number2], ...)</code></td>
+<td>Mean of a range</td>
+<td>1</td>
+</tr>
+<tr>
+<td>AVERAGEIFS</td>
+<td><code>=AVERAGEIFS(average_range, criteria_range1, criteria1, ...)</code></td>
+<td>Conditional average, multiple conditions; <code>average_range</code> is <strong>first</strong></td>
+<td>3</td>
+</tr>
+<tr>
+<td>COUNT</td>
+<td><code>=COUNT(value1, [value2], ...)</code></td>
+<td>Counts cells containing numbers</td>
+<td>1</td>
+</tr>
+<tr>
+<td>COUNTA</td>
+<td><code>=COUNTA(value1, [value2], ...)</code></td>
+<td>Counts cells containing anything</td>
+<td>1</td>
+</tr>
+<tr>
+<td>COUNTIF</td>
+<td><code>=COUNTIF(range, criteria)</code></td>
+<td>Counts cells matching one condition</td>
+<td>1</td>
+</tr>
+<tr>
+<td>MAX / MIN</td>
+<td><code>=MAX(number1, ...)</code> / <code>=MIN(number1, ...)</code></td>
+<td>Largest / smallest value</td>
+<td>1</td>
+</tr>
+<tr>
+<td>MEDIAN</td>
+<td><code>=MEDIAN(number1, ...)</code></td>
+<td>Middle value of a range</td>
+<td>1</td>
+</tr>
+<tr>
+<td>MODE.SNGL</td>
+<td><code>=MODE.SNGL(number1, ...)</code></td>
+<td>Most frequently occurring value (classic <code>MODE</code> still works)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>STDEV.P</td>
+<td><code>=STDEV.P(number1, ...)</code></td>
+<td>Population standard deviation</td>
+<td>3</td>
+</tr>
+<tr>
+<td>ROUND</td>
+<td><code>=ROUND(number, num_digits)</code></td>
+<td>Rounds to a specified number of decimal places</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ROUNDUP / ROUNDDOWN</td>
+<td><code>=ROUNDUP(number, num_digits)</code> / <code>=ROUNDDOWN(...)</code></td>
+<td>Rounds in a specific direction regardless of the normal rule</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ABS</td>
+<td><code>=ABS(number)</code></td>
+<td>Strips a negative sign</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Gotcha:</strong> SUMIF and SUMIFS put the range being summed in different argument positions, last (and optional) in SUMIF, first (and required) in SUMIFS. Mixing them up is one of the most common formula errors.</p>
+<h2>Date &amp; time functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Syntax</th>
+<th>Purpose</th>
+<th>Ch.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TODAY</td>
+<td><code>=TODAY()</code></td>
+<td>Current date (no arguments, parentheses still required)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>NOW</td>
+<td><code>=NOW()</code></td>
+<td>Current date and time</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Reminder: a date is a stored serial number counting days from a fixed start point, subtracting two dates gives a plain integer (days between them), not a special "date" result.</p>
+<h2>Financial functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Syntax</th>
+<th>Purpose</th>
+<th>Ch.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PV</td>
+<td><code>=PV(rate, nper, pmt, [fv], [type])</code></td>
+<td>Present value of a future amount</td>
+<td>3</td>
+</tr>
+<tr>
+<td>FV</td>
+<td><code>=FV(rate, nper, pmt, [pv], [type])</code></td>
+<td>Future value of a series of payments</td>
+<td>3</td>
+</tr>
+<tr>
+<td>NPV</td>
+<td><code>=NPV(rate, value1, [value2], ...)</code></td>
+<td>Net present value of a series of cash flows</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h2>Text functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Syntax</th>
+<th>Purpose</th>
+<th>Ch.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TEXT</td>
+<td><code>=TEXT(value, format_text)</code></td>
+<td>Converts a number to text in a specified format</td>
+<td>3</td>
+</tr>
+<tr>
+<td>UPPER</td>
+<td><code>=UPPER(text)</code></td>
+<td>Converts text to all caps</td>
+<td>3</td>
+</tr>
+<tr>
+<td>REPT</td>
+<td><code>=REPT(text, number_times)</code></td>
+<td>Repeats text a given number of times</td>
+<td>3</td>
+</tr>
+<tr>
+<td>CONCAT</td>
+<td><code>=CONCAT(text1, [text2], ...)</code></td>
+<td>Joins text from multiple cells</td>
+<td>1</td>
+</tr>
+<tr>
+<td>TEXTJOIN</td>
+<td><code>=TEXTJOIN(delimiter, ignore_empty, text1, [text2], ...)</code></td>
+<td>Joins text with a delimiter between items</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h2>Database functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Syntax</th>
+<th>Purpose</th>
+<th>Ch.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DSUM</td>
+<td><code>=DSUM(database, field, criteria)</code></td>
+<td>Sums a field across records matching a criteria range</td>
+<td>3</td>
+</tr>
+<tr>
+<td>DAVERAGE</td>
+<td><code>=DAVERAGE(database, field, criteria)</code></td>
+<td>Averages a field across records matching a criteria range</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Both require a separate <strong>criteria range</strong> set up above or beside the data (headers matching the database's field names, with conditions typed underneath), not just a simple range like SUMIF.</p>
+<h2>Named ranges</h2>
+<p>Select a range, type a name into the Name Box, press Enter. Use the name directly in formulas afterward (<code>=XLOOKUP(C8, RevenueLevel, MatchRate, , -1)</code> instead of <code>=XLOOKUP(C8, $I$8:$I$12, $J$8:$J$12, , -1)</code>). Ch. 1.</p>
+<h2>Chapter 2 highlights: visualization &amp; PivotTables</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Quick note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PivotTable</td>
+<td>Drag fields into Rows, Columns, Values, and Filters to summarize large datasets interactively</td>
+</tr>
+<tr>
+<td>PivotChart</td>
+<td>A chart built directly from a PivotTable, updates automatically when the PivotTable changes</td>
+</tr>
+<tr>
+<td>Chart choice</td>
+<td>Line = trend over time; bar/column = comparison across categories; scatter = relationship between two variables; pie = parts of a whole, use sparingly</td>
+</tr>
+<tr>
+<td>Tufte's principle</td>
+<td>Maximize the data-ink ratio, every mark on a chart should carry information, avoid "chart junk"</td>
+</tr>
+<tr>
+<td>Healy's addition</td>
+<td>Design for accessibility and honest defaults, context matters as much as precision</td>
+</tr>
+</tbody>
+</table>
+<h2>Troubleshooting tool</h2>
+<p><strong>Watch Window</strong> (Formulas tab): monitors specific cells' values while you're working elsewhere in a large workbook, useful for checking a formula's result without scrolling back to it. Ch. 3.</p>
+<h2>Keyboard shortcuts</h2>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+Home</td>
+<td>Jump to cell A1</td>
+</tr>
+<tr>
+<td>Ctrl+Arrow</td>
+<td>Jump to the edge of a data block</td>
+</tr>
+<tr>
+<td>Ctrl+C / Ctrl+V</td>
+<td>Copy / paste</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+V</td>
+<td>Paste Special</td>
+</tr>
+<tr>
+<td>Click, then Shift+Click</td>
+<td>Select a range between two cells</td>
+</tr>
+</tbody>
+</table>
+</main>
+</body>
+</html>

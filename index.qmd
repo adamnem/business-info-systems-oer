@@ -1,0 +1,9 @@
+# Welcome {.unnumbered}
+
+This is the open textbook for Business Information Systems, replacing the commercial McGraw Hill materials with freely available, course-authored content.
+
+Each chapter is written to be worked through alongside a companion Excel workbook, downloadable from that chapter's page. Look for the yellow/blue/white cell legend explained in each starter file.
+
+## How this book is organized
+
+The book follows the same module structure as the course itself: spreadsheet fundamentals first, then databases, then security/cloud/AI. Chapter 1 is the first complete draft; more chapters will be added here as they're written.
